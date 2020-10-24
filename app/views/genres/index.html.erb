@@ -1,0 +1,6 @@
+<ul>
+<% @genres.each do |genre| %>
+    <%= genre.genre_type %>
+    <li><%= genre.game.title %></li>
+<% end %>
+</ul>
