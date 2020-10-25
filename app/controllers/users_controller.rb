@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     def create
         if user = User.create(user_params)
-            redirect_to subscriptions_path
+            redirect_to user_path(user)
         else
             render :new
         end
