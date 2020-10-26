@@ -17,12 +17,12 @@ Genre.destroy_all
                 password:Faker::Internet.password)
 end
 
-10.times do
+100.times do
     Game.create(title:Faker::Game.title,
                 platform:Faker::Game.platform)
 end
 
-10.times do
+50.times do
     Genre.create(genre_type:Faker::Game.genre,
                 user_id: User.all.sample.id,
                 game_id: Game.all.sample.id)
