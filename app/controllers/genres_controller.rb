@@ -10,7 +10,7 @@ class GenresController < ApplicationController
     end
 
     def new
-        @genre = Genre.new(user_id params[:user_id])
+        @genre = Genre.new(user_id: params[:user_id])
     end
 
     def create
