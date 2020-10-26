@@ -1,5 +1,7 @@
 class GenresController < ApplicationController
 
+    before_action :redirect_if_not_logged_in
+
     def index
         if params[:user_id]
             @user = User.find(params[:user_id])
@@ -14,10 +16,10 @@ class GenresController < ApplicationController
     end
 
     def create
-        @genre = Genre.new(genre_params)
+        @genre = current_user.genres.build(genre_params)
 
         if @genre.save
-            redirect_to @genre
+            redirect_to genres_path
         else
             render :new
         end
