@@ -1,0 +1,33 @@
+<h2>Sign Up Here!</h2>
+
+<%= form_tag @user, method: 'post' do %>
+    <% if @user.errors.any? %>
+        <div id="error_message">
+            <h4>The following errors have occurred:</h4>
+            <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <% if @user.errors.empty? %>
+        <div class="field">
+    <% else %>
+        <div class="field_with_errors">
+    <% end %>
+        <%= form_for @user, url:'/signup' do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %><br><br>
+
+            <%= f.label :email %>
+            <%= f.email_field :email %><br><br>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %><br><br>
+
+            <%= f.submit "Sign Up" %>    
+        <% end %>
+    </div>        
+<% end %>

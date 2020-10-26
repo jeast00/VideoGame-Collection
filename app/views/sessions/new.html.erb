@@ -1,13 +1,32 @@
 <h2>Log In</h2>
 
-<%= form_tag sessions_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %><br><br>
+    <%= form_tag @user, method: 'post' do %>
+        <% if @user.errors.any? %>
+            <div id="error_message">
+                <h4>The following errors have occurred:</h4>
+                <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %><br><br>
+    <% if @user.errors.empty? %>
+        <div class="field">
+    <% else %>
+        <div class="field_with_errors">
+    <% end %>
+    <%= form_for @user, url:'/login' do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br><br>
 
-    <%= submit_tag "log in" %>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br><br>
+
+        <%= f.submit "log in" %>
+    <% end %>
+
 <% end %>
 
 <p>Don't have an account? <%= link_to "Sign up", "/signup" %> here!</p>
