@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     end
 
     def create
-        @game = Game.new(game_params)
+        @game = current_user.games.build(game_params)
 
         if @game.save
             redirect_to games_path
