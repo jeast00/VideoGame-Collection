@@ -1,0 +1,4 @@
+<h1>Hello <%= @user.username %></h1>
+
+<%= link_to 'edit user', edit_user_path(@user) %> |
+<%= link_to 'logout', sessions_path, method: 'delete' %>

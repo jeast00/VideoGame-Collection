@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   post '/sessions' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :genres
 
