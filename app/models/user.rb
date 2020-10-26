@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     #scope method for session login omniauth
     def self.find_or_create_by_omniauth(auth_hash)
-        self.where(:email => auth_hash['info']['email']).first_or_create do |user|
+        self.where(:name => auth_hash['info']['name'], :email => auth_hash['info']['email']).first_or_create do |user|
             user.password = SecureRandom.hex(16)
         end
     end
