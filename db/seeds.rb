@@ -12,7 +12,7 @@ Game.destroy_all
 Genre.destroy_all
 
 10.times do 
-    User.create(username:Faker::Lorem.word,
+    User.create(name:Faker::Name.name,
                 email:Faker::Internet.email,
                 password:Faker::Internet.password)
 end
