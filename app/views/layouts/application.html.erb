@@ -13,10 +13,10 @@
 
   <div>
   <% if logged_in? %>
-    <%= link_to 'Add a game', new_game_path %>
-    <%= link_to 'Add a genre', new_genre_path %>
-    <%= link_to 'See all games', games_path %>
-    <%= link_to 'Seel all genres', genres_path %>
+    <%= link_to 'Add a game', new_game_path %> |
+    <%= link_to 'Add a genre', new_genre_path %> |
+    <%= link_to 'See all games', games_path %> |
+    <%= link_to 'Seel all genres', genres_path %> |
     <%= link_to 'logout', sessions_path, method: 'delete' %>
   <% end %>
   </div>
