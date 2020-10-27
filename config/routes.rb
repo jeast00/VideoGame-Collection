@@ -9,16 +9,17 @@ Rails.application.routes.draw do
   delete '/sessions/' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#create'
   
+  resources :genres
+
+  resources :users do
+    resources :genres
+  end
 
   resources :games do
     resources :genres
   end
 
-  resources :genres
 
-  resources :users do
-    resources :games
-  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -3,27 +3,26 @@ class GenresController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        if params[:game_id] && @game = Game.find(params[:game_id])
-            @game = Game.find(params[:game_id])
-            @genres = @game.genres
+        if params[:user_id] && @user = User.find(params[:user_id])
+            @genres = @user.genres
         else
             @genres = Genre.all 
         end
     end
 
     def new
-        if params[:game_id] && @game = Game.find(params[:game_id])
-            @genre = @game.genres.build
+        if params[:user_id] && @user = User.find(params[:user_id])
+            @genre = Genre.new
         else
             @genre = Genre.new
         end
     end
 
     def create
-        @genre = @games.genres.build(genre_params)
+        @genre = Genre.new(genre_params)
 
         if @genre.save
-            redirect_to genres_path
+            redirect_to user_genre_path(@user, @genre)
         else
             render :new
         end
@@ -56,6 +55,7 @@ class GenresController < ApplicationController
     private
 
     def genre_params
+        byebug
         params.require(:genre).permit(:genre_type, :user_id, :game_id)
     end
 end

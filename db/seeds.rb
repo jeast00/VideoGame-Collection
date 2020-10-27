@@ -19,8 +19,7 @@ end
 
 100.times do
     Game.create(title:Faker::Game.title,
-                platform:Faker::Game.platform,
-                user_id: User.all.sample.id)
+                platform:Faker::Game.platform)
 end
 
 50.times do

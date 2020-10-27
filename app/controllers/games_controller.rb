@@ -1,33 +1,24 @@
 class GamesController < ApplicationController
 
-    before_action  :redirect_if_not_logged_in
+    before_action :redirect_if_not_logged_in
 
     def index
-        if params[:user_id] && @user = User.find(params[:user_id])
-            @games = @user.games
-        else
             @games = Game.all
-        end
     end
 
     def new
-        if params[:user_id] && @user = User.find(params[:user_id])
-            @game = @user.games.build
-        else
             @game = Game.new
-        end
     end
 
     def show
         @game = Game.find(params[:id])
-        redirect_to user_game_path(@user, @game) if !@game
     end
 
     def create
         @game = current_user.games.build(game_params)
 
         if @game.save
-            redirect_to games_path
+            redirect_to game_genre_path(@game)
         else
             render :new
         end
@@ -41,7 +32,7 @@ class GamesController < ApplicationController
         @game = Game.find(params[:id])
 
         if @game.update(game_params)
-            redirect_to user_game_path(@user, @game)
+            redirect_to game_genre_path(@game)
         else
             render :edit
         end
@@ -50,7 +41,7 @@ class GamesController < ApplicationController
     def destroy
         @game = Game.find(params[:id])
         @game.destroy
-        redirect_to user_games_path(@user)
+        redirect_to game_genre_path(@game)
     end
 
     private
