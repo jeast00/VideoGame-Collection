@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
-    has_many :genres
-    has_many :users, through: :genres
+    belongs_to :user
+    belongs_to :genre
 
     validates :title, :platform, presence: true
     validates :title, :platform, uniqueness: true

@@ -2,8 +2,8 @@ class User < ApplicationRecord
     validates :name, :email, :password, presence: true
     validates :email, uniqueness: true
 
-    has_many :genres
-    has_many :games, through: :genres
+    has_many :games
+    has_many :genres, through: :games
     has_secure_password
 
     #scope method for session login omniauth

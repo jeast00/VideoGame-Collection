@@ -1,6 +1,6 @@
 class Genre < ApplicationRecord
-    belongs_to :user
-    belongs_to :game
+    has_many :games
+    has _many :users, through: :games
 
     validates :genre_type, presence: true
     validates :genre_type, uniqueness: true

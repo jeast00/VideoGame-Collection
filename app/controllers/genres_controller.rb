@@ -1,9 +1,9 @@
 class GenresController < ApplicationController
 
-    before_action :redirect_if_not_logged_in
+    # before_action :redirect_if_not_logged_in
 
     def index
-        if params[:user_id] && @user = User.find(params[:user_id])
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @genres = @user.genres
         else
             @genres = Genre.all 
@@ -11,33 +11,30 @@ class GenresController < ApplicationController
     end
 
     def new
-        if params[:user_id] && @user = User.find(params[:user_id])
-            @genre = @user.genres.build
-        else
-            @genre = Genre.new
-        end
+        @genre = Genre.new(user_id: params[:user_id])
     end
 
     def create
-        @genre = current_user.genres.build(genre_params)
+        byebug
+        @genre = Genre.new(genre_params)
 
         if @genre.save
-            redirect_to user_path
+            redirect_to genres_path
         else
             render :new
         end
     end
 
     def show
-        @genre = Genre.find(params[:id])
+        @genre = Genre.find_by_id(params[:id])
     end
 
     def edit
-        @genre = Genre.find(params[:id])
+        @genre = Genre.find_by_id(params[:id])
     end
 
     def update
-        @genre = Genre.find(params[:id])
+        @genre = Genre.find_by_id(params[:id])
 
         if @genre.update(genre_params)
             redirect_to genres_path
@@ -47,7 +44,7 @@ class GenresController < ApplicationController
     end
 
     def destroy
-        @genre = Genre.find(params[:id])
+        @genre = Genre.find_by_id(params[:id])
         @genre.destroy
         redirect_to genres_path
     end
