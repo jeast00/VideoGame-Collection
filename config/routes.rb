@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   delete '/sessions/' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#create'
   
-  resources :genres
+  resources :games
 
   resources :users do
-    resources :genres
+    resources :games
   end
 
-  resources :games do
-    resources :genres
+  resources :genres do
+    resources :games
   end
 
 
