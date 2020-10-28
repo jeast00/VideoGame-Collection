@@ -12,17 +12,17 @@ class GenresController < ApplicationController
 
     def new
         if params[:user_id] && @user = User.find(params[:user_id])
-            @genre = Genre.new
+            @genre = @user.genres.build
         else
             @genre = Genre.new
         end
     end
 
     def create
-        @genre = Genre.new(genre_params)
+        @genre = current_user.genres.build(genre_params)
 
         if @genre.save
-            redirect_to user_genre_path(@user, @genre)
+            redirect_to user_path
         else
             render :new
         end
@@ -55,7 +55,6 @@ class GenresController < ApplicationController
     private
 
     def genre_params
-        byebug
         params.require(:genre).permit(:genre_type, :user_id, :game_id)
     end
 end

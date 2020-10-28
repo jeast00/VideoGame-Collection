@@ -1,7 +1,7 @@
 <h1>Add a Genre</h1>
 
-<%= form_tag @genre, method: 'post' do %>
-    <%= label_tag :genre_type %>
-    <%= text_field_tag :genre_type %>
-    <%= submit_tag "Add Genre" %>
+<%= form_for([@user, @genre]) do |f| %>
+    <%= f.label :genre_type %>
+    <%= f.text_field :genre_type %>
+    <%= f.submit "Add Genre" %>
 <% end %>
