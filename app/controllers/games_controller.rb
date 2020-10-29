@@ -3,11 +3,15 @@ class GamesController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-            @games = Game.all
+            if params[:user_id] && @user = User.find_by_id(params[:user_id])
+                @user = @user.games
+            else
+                @games = Game.all
+            end
     end
 
     def new
-            @game = Game.new
+            @game = Game.new(user_id: params[:user_id])
     end
 
     def show
@@ -47,7 +51,7 @@ class GamesController < ApplicationController
     private
 
     def game_params
-        params.require(:game).permit(:title, :platform, :user_id)
+        params.require(:game).permit(:title, :platform, :user_id, :genre_id)
     end
 
 end
