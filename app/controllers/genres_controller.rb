@@ -3,7 +3,7 @@ class GenresController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @genres = Genre.all 
+        @genres = Genre.all
     end
 
     def new
@@ -11,17 +11,13 @@ class GenresController < ApplicationController
     end
 
     def create
-        @genre = Genre.new(genre_params)
+        @genre = current_user.genres.build(genre_params)
 
         if @genre.save
             redirect_to genres_path
         else
             render :new
         end
-    end
-
-    def show
-        @genre = Genre.find_by_id(params[:id])
     end
 
     def edit

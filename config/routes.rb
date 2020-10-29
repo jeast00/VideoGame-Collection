@@ -9,8 +9,19 @@ Rails.application.routes.draw do
   delete '/sessions/' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#create'
   
-  resources :games
+  #Nested routes new, show, or index
 
+  #'/users'
+
+  #'/users/:id/genres'
+  #'/users/:id/games'
+
+  #'/genres'
+
+  #'/genres/:id/games'
+
+
+  resources :games
   resources :users do
     resources :games
   end
