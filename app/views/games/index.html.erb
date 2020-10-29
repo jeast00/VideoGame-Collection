@@ -2,5 +2,5 @@
 
 
 <% @games.each do |game| %>
-    <%= game.title %><br>
+    <%= link_to game.title, game_path(@genre) %><br>
 <% end %>

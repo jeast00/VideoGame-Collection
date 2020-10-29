@@ -6,13 +6,14 @@ class GamesController < ApplicationController
             if params[:genre_id] && @genre = Genre.find_by_id(params[:genre_id])
                 @games = @genre.games
             else
+                @error = "This game does not exist" if params[:genre_id]
                 @games = Game.all
             end
     end
 
     def new
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @game = @user.games.build
+            @game = @genre.games.build
         else
             @game = Game.new
         end

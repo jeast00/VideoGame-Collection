@@ -18,6 +18,12 @@
     <%= link_to 'signup', '/signup' %>
   <% end %>
   </div>
+
+  <div>
+    <% if @error %>
+      <%= @error %><br><br>
+    <% end %>
+  </div>
     <%= yield %>
   </body>
 </html>
