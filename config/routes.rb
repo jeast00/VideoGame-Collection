@@ -20,15 +20,15 @@ Rails.application.routes.draw do
 
   #'/genres/:id/games'
 
+  resources :genres do
+    resources :games
+  end
 
   resources :games
   resources :users do
     resources :games
   end
 
-  resources :genres do
-    resources :games
-  end
 
 
 
