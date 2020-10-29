@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_10_24_161103) do
     t.string "title"
     t.string "platform"
     t.integer "user_id"
-    t.integer "gemre_id"
+    t.integer "genre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

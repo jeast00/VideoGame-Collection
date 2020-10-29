@@ -4,7 +4,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :platform
       t.integer :user_id
-      t.integer :gemre_id
+      t.integer :genre_id
       t.timestamps
     end
   end
