@@ -1,5 +1,6 @@
 <h1>Welcome <%= current_user.name %>!</h1>
 
 
+<%= link_to 'Add a Game', new_user_game_path(@user) %> |
 <%= link_to 'Add a Genre', new_genre_path %>
 

@@ -1,6 +1,2 @@
+<h1><%= current_user.name %>'s Game Collection </h1>
 
-
-
-<% @games.each do |game| %>
-    <%= link_to game.title, game_path(@user) %><br>
-<% end %>

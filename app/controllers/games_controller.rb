@@ -3,60 +3,33 @@ class GamesController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-            if params[:genre_id] && @genre = Genre.find_by_id(params[:genre_id])
-                @games = @genre.games
-            else
-                @error = "This game does not exist" if params[:genre_id]
-                @games = Game.all
-            end
+        @games = Game.all 
     end
 
     def new
-        if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @game = @genre.games.build
-        else
-            @game = Game.new
-        end
+        @game = Game.new(user_id: params[:user_id])
     end
 
     def show
-        @game = Game.find(params[:id])
+        @game = Game.find_by_id(params[:id])
     end
 
     def create
+        byebug
         @game = current_user.games.build(game_params)
 
         if @game.save
-            redirect_to @game
+            redirect_to user_path(current_user)
         else
             render :new
         end
     end
 
-    def edit
-        @game = Game.find(params[:id])
-    end
-
-    def update
-        @game = Game.find(params[:id])
-
-        if @game.update(game_params)
-            redirect_to games_path
-        else
-            render :edit
-        end
-    end
-
-    def destroy
-        @game = Game.find(params[:id])
-        @game.destroy
-        redirect_to games_path
-    end
 
     private
 
     def game_params
-        params.require(:game).permit(:title, :platform, :user_id, :genre_id)
+        params.require(:game).permit(:title, :platform, :genre_id, :user_id)
     end
 
 end

@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   #'/users'
 
-  #'/users/:id/genres'
   #'/users/:id/games'
 
   #'/genres'
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :games
+
   resources :users do
     resources :games
   end
