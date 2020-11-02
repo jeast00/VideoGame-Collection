@@ -15,7 +15,6 @@ class GamesController < ApplicationController
     end
 
     def create
-        byebug
         @game = current_user.games.build(game_params)
 
         if @game.save
@@ -24,6 +23,21 @@ class GamesController < ApplicationController
             render :new
         end
     end
+
+    def edit
+        @game = Game.find_by_id(params[:id])
+    end
+
+    def update
+        @game = Game.find_by_id(params[:id])
+        
+        if @game.update(game_params)
+            redirect_to user_game_path(@user, @game)
+        else
+            render :edit
+        end
+    end
+
 
 
     private

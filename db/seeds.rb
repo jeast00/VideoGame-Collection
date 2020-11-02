@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# User.destroy_all
-# Game.destroy_all
+User.destroy_all
+Game.destroy_all
 Genre.destroy_all
 
 # 10.times do 
