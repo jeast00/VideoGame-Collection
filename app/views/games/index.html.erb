@@ -1,2 +1,7 @@
 <h1><%= current_user.name %>'s Game Collection </h1>
 
+<ul>
+    <% current_user.games.each do |game| %>
+        <li><%= link_to game.title, user_game_path(game.id, current_user.id) %></li>
+    <% end %>
+</ul>
