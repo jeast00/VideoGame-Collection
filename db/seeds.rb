@@ -21,10 +21,8 @@ Genre.destroy_all
     Genre.create(genre_type:Faker::Game.genre)
 end
 
-# 100.times do
-#     Game.create(title:Faker::Game.title,
-#                 platform:Faker::Game.platform,
-#                 user_id: User.all.sample.id,
-#                 genre_id: Genre.all.sample.id)
-# end
+100.times do
+    Game.create(title:Faker::Game.title,
+                platform:Faker::Game.platform)
+end
 
