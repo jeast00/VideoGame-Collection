@@ -32,7 +32,7 @@ class GamesController < ApplicationController
         @game = Game.find_by_id(params[:id])
         
         if @game.update(game_params)
-            redirect_to user_game_path(@user, @game)
+            redirect_to user_game_path(current_user.id, @game)
         else
             render :edit
         end
