@@ -5,3 +5,5 @@
         <li><%= link_to game.title, user_game_path(game.id, current_user.id) %></li>
     <% end %>
 </ul>
+
+<%= link_to "go back", user_path(current_user.id) %>
