@@ -12,3 +12,7 @@
 
     <%= f.submit "Edit Game" %>
 <% end %>
+
+<br>
+
+<%= link_to "go back", user_game_path(current_user.id, @game) %>
