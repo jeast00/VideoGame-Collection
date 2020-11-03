@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @user.games.build
     end
 
     def create
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password, games_attributes: [:title, :platform, :user_id, :genre_id])
     end
 
 end

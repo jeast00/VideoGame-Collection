@@ -28,6 +28,20 @@
             <%= f.label :password %>
             <%= f.password_field :password %><br><br>
 
+            <p>Immediately add a game to your collection at signup!</p>
+
+            <%= f.fields_for :games do |game| %>
+                <%= game.label :title %>
+                <%= game.text_field :title, required: true %><br><br>
+
+                <%= game.label :platform %>
+                <%= game.text_field :platform, required: true %><br><br>
+
+                <%= game.label :genre_type %>
+                <%= game.collection_select :genre_id, Genre.all, :id, :genre_type %><br><br>
+
+            <% end %>
+
             <%= f.submit "Sign Up" %>    
         <% end %>
     </div>        
