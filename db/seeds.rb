@@ -11,11 +11,11 @@ User.destroy_all
 Game.destroy_all
 Genre.destroy_all
 
-# 10.times do 
-#     User.create(name:Faker::Name.name,
-#                 email:Faker::Internet.email,
-#                 password:Faker::Internet.password)
-# end
+10.times do 
+    User.create(name:Faker::Name.name,
+                email:Faker::Internet.email,
+                password:Faker::Internet.password)
+end
 
 50.times do
     Genre.create(genre_type:Faker::Game.genre)
@@ -23,6 +23,8 @@ end
 
 100.times do
     Game.create(title:Faker::Game.title,
-                platform:Faker::Game.platform)
+                platform:Faker::Game.platform,
+                user_id: User.all.sample.id,
+                genre_id: Genre.all.sample.id)
 end
 

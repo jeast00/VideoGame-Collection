@@ -4,4 +4,6 @@ class Game < ApplicationRecord
 
     validates :title, :platform, presence: true
 
+    scope :ordered, -> { order(:title) }
+
 end
