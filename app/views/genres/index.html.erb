@@ -1,0 +1,5 @@
+<% @genres.each do |genre| %>
+    <h1><%= genre.genre_type %></h1>
+<% end %>
+
+<%= link_to "go back", user_path(current_user.id) %>

@@ -11,7 +11,6 @@ class GamesController < ApplicationController
             @games = @user.games
         else
             @games = Game.all
-    
         end
     end
 
