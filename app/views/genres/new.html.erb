@@ -1,9 +1,27 @@
 <h1>Add a Genre</h1>
 
-<%= form_for(@genre) do |f| %>
-    <%= f.label :genre_type %>
-    <%= f.text_field :genre_type %>
-    <%= f.submit "Add Genre" %>
-<% end %>
+<%= form_tag @genre, method: 'post' do %>
+    <% if @genre.errors.any? %>
+        <div id="error_message">
+            <h4>The following errors have occurred:</h4>
+            <ul>
+                <% @genre.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
+    <% if @genre.errors.empty? %>
+        <div class="field">
+    <% else %>
+        <div class="field_with_errors">
+    <% end %>
+            <%= form_for(@genre) do |f| %>
+                <%= f.label :genre_type %>
+                <%= f.text_field :genre_type %>
+                <%= f.submit "Add Genre" %>
+            <% end %>
+        </div>
+<% end %>
 <%= link_to "go back", user_path(current_user.id) %>

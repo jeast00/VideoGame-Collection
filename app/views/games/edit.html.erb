@@ -1,16 +1,35 @@
 <h1>Edit Game Details</h1>
 
-<%= form_for(@game) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %><br><br>
+<%= form_tag @game, method: 'patch' do %>
+    <% if @game.errors.any? %>
+        <div id="error_message">
+            <h4>The following errors have occurred:</h4>
+            <ul>
+                <% @game.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-    <%= f.label :platform %>
-    <%= f.text_field :platform %><br><br>
+    <% if @game.errors.empty? %>
+        <div class="field">
+    <% else %>
+        <div class="field_with_errors">
+    <% end %>
+        <%= form_for(@game) do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title %><br><br>
 
-    <%= f.label :genre_type %>
-    <%= f.collection_select :genre_id, Genre.all, :id, :genre_type %><br><br>
+            <%= f.label :platform %>
+            <%= f.text_field :platform %><br><br>
 
-    <%= f.submit "Edit Game" %>
+            <%= f.label :genre_type %>
+            <%= f.collection_select :genre_id, Genre.all, :id, :genre_type %><br><br>
+
+            <%= f.submit "Add Game" %>
+        <% end %>
+    </div>
 <% end %>
 
 <br>
