@@ -5,5 +5,4 @@
 <%= link_to 'Add a Genre', new_genre_path %> |
 <%= link_to 'See game collection', user_games_path(@user) %> |
 <%= link_to 'Genre with the most games', genres_path %> |
-<%= link_to 'log out', sessions_path, method: 'delete' %>
-
+<%= link_to 'log out', sessions_path, method: :delete, data: { confirm: "Are you sure you want to logout?" } %><br>

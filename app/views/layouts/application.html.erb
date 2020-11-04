@@ -13,7 +13,7 @@
 
   <div>
   <% if logged_in? %>
-    <%= link_to 'logout', sessions_path, method: 'delete' %>
+    <%= link_to 'logout', sessions_path, method: :delete, data: { confirm: "Are you sure you want to logout?" } %><br> %>
   <% else %>
     <%= link_to 'signup', '/signup' %>
   <% end %>
