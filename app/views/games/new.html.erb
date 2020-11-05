@@ -1,6 +1,7 @@
-<h1>Add a game to your collection</h1>
 
-<%= form_tag @game, method: 'post' do %>
+
+<%= form_tag(@game, { class: "game_form" } ) do %>
+    <h1>Add a game to your collection</h1>
     <% if @game.errors.any? %>
         <div id="error_message">
             <h4>The following errors have occurred:</h4>

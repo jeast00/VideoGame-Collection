@@ -98,6 +98,10 @@ body {
      text-transform: uppercase;
  }
 
+ /* end css styles for errors */
+
+ /* -------------------------- */
+
  /* css styles for signup form */
 
  .signup_form {
@@ -143,10 +147,9 @@ body {
     border-radius: 20px;
 }
 
-select {
+.signup_form select {
     border: 0;
     background: #3D6884;
-    background: ;
     display: block;
     margin: auto;
     text-align: center;
@@ -172,3 +175,72 @@ select {
 }
 
 /* end css styles for sign up form */
+
+/* ----------------------------- */
+
+/* css styles for game form */
+
+.game_form {
+    width: 200px;
+    padding: 40px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    background: #3D6884;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.game_form input[type = 'text'],.signup_form input[type = 'email'],.signup_form input[type = 'password'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 5px 5px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.game_form h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.game_form label {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.game_form select {
+    border: 0;
+    background: #3D6884;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 5px 5px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.game_form input[type = 'submit'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* end css styles for game form  */

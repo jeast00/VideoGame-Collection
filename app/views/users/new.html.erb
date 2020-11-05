@@ -35,7 +35,7 @@
                 <%= game.text_field :platform, placeholder: true, required: true %><br><br>
 
                 <%= game.label :genre_type %>
-                <%= game.collection_select :genre_id, Genre.all, :id, :genre_type, {}, { class: 'genre_selection' } %><br><br>
+                <%= game.collection_select :genre_id, Genre.all, :id, :genre_type %><br><br>
 
             <% end %>
 
