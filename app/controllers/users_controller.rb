@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @user.games.build
+        @user.games.build #nested attributes build for new view in user signup
     end
 
     def create

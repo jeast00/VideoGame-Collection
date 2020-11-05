@@ -11,19 +11,16 @@
 
   <body>
 
-  <div>
+  <div class="nav-bar">
   <% if logged_in? %>
     <%= link_to 'logout', sessions_path, method: :delete, data: { confirm: "Are you sure you want to logout?" } %><br> %>
   <% else %>
     <%= link_to 'signup', '/signup' %>
   <% end %>
+   |
+   <span>Video Game Collection</span>
   </div>
-
-  <div>
-    <% if @error %>
-      <%= @error %><br><br>
-    <% end %>
-  </div>
+  
     <%= yield %>
   </body>
 </html>

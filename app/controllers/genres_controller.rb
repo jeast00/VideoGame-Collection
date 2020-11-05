@@ -3,7 +3,7 @@ class GenresController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @genres = Genre.genre_with_most_games
+        @genres = Genre.genre_with_most_games #scope method for index finding the genre with the most games
     end
 
     def new
