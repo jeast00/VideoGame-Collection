@@ -1,14 +1,15 @@
-<h1><%= current_user.name %>'s Game Collection Details </h1>
 
-<div>
-   <p><h3>Title: <%= @game.title %></h3></p>
+
+<div class="game_details">
+    <h1><%= current_user.name %>'s Game Collection Details </h1>
+    <p><h3>Title: <%= @game.title %></h3></p>
     <p><h4>Platform: <%= @game.platform %></h4></p>
     <p><h4>Genre type: <%= @game.genre.genre_type %></h4></p>
 </div>
 
 <div class="links">
-    <%= link_to "edit game details", edit_user_game_path(current_user.id, @game) %><br><br>
-    <%= button_to "delete game", @game, method: :delete, data: { confirm: "Are you sure you want to delete this game?" } %><br>
+    <%= link_to "edit game details", edit_user_game_path(current_user.id, @game) %> |
+    <%= link_to "delete game", @game, method: :delete, data: { confirm: "Are you sure you want to delete this game?" } %><br><br>
 
     <%= link_to "go back", user_games_path(current_user.id) %>
 </div>

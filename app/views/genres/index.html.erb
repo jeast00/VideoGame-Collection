@@ -1,5 +1,11 @@
-<% @genres.each do |genre| %>
-    <h1><%= genre.genre_type %></h1>
-<% end %>
 
-<%= link_to "go back", user_path(current_user.id) %>
+<div class="genre_most_games">
+    <% @genres.each do |genre| %>
+        <h1><%= genre.genre_type %></h1>
+    <% end %>
+</div>
+
+
+<div class="go_back_link">
+    <%= link_to "go back", user_path(current_user.id) %>
+</div>

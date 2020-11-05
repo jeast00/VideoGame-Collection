@@ -1,6 +1,7 @@
-<h1>Edit Game Details</h1>
 
-<%= form_tag @game, method: 'patch' do %>
+
+<%= form_tag(@game, { class: "game_form" } ) do %>
+    <h1>Edit Game Details</h1>
     <% if @game.errors.any? %>
         <div id="error_message">
             <h4>The following errors have occurred:</h4>
@@ -23,4 +24,6 @@
 
 <br>
 
-<%= link_to "go back", user_game_path(current_user.id, @game) %>
+<div class="go_back_link">
+    <%= link_to "go back", user_game_path(current_user.id, @game) %>
+</div>

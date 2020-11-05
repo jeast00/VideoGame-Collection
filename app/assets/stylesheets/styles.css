@@ -330,6 +330,37 @@ body {
 
 /* --------------------------------- */
 
+/* css styles for game details */
+
+.game_details {
+    color: white;
+    text-transform: uppercase;
+}
+
+.game_details h1 {
+    font-weight: 200;
+}
+
+/* end css styles for game details */
+
+/* --------------------------------- */
+
+/* css styles for genre with most games */
+
+.genre_most_games h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1000%;
+    font-weight: 300;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+/* end css styles for genre with most games */
+
+/* --------------------------------- */
+
 /* css styles for users show view */
 
 .welcome h1 {
