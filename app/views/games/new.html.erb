@@ -1,5 +1,4 @@
 
-
 <%= form_tag(@game, { class: "game_form" } ) do %>
     <h1>Add a game to your collection</h1>
     <% if @game.errors.any? %>
@@ -22,4 +21,7 @@
     </div>
 <% end %>
 
-<%= link_to "go back", user_path(current_user.id) %>
+
+<div class="go_back_link">
+    <%= link_to "go back", user_path(current_user.id) %>
+</div>

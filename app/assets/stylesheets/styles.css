@@ -59,13 +59,26 @@ body {
 }
 
 .signup_account {
+    color: white;
+    text-transform: uppercase;
     position: relative;
     text-align: center;
 }
 
+.signup_account a {
+    color: white;
+}
+
 .github_sign_in {
+    color: white;
+    text-transform: uppercase;
     position: relative;
     text-align: center;
+}
+
+.github_sign_in a {
+    color: white;
+    text-decoration: none;
 }
 
 .login_form input[type = 'submit'] {
@@ -244,3 +257,37 @@ body {
 }
 
 /* end css styles for game form  */
+
+/* -------------------------------- */
+
+/* css styles for users show view */
+
+.welcome h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* end css styles for users show view */
+
+/* -------------------------------- */
+
+/* css styles for links */
+
+.go_back_link a {
+    position: absolute;
+    top: 80%;
+    left: 47%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* end css styles for links  */
