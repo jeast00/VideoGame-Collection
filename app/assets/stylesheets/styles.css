@@ -310,6 +310,26 @@ body {
 
 /* --------------------------------- */
 
+/* css styles for game list */
+
+.game_list {
+    color: white;
+    text-transform: uppercase;
+}
+
+.game_list h1 {
+    font-weight: 200;
+}
+
+.game_list ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* end css styles for game list */
+
+/* --------------------------------- */
+
 /* css styles for users show view */
 
 .welcome h1 {
