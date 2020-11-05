@@ -1,6 +1,7 @@
-<h1>Add a Genre</h1>
 
-<%= form_tag @genre, method: 'post' do %>
+
+<%= form_tag(@genre, { class: "genre_form" } ) do %>
+    <h1>Add a Genre</h1>
     <% if @genre.errors.any? %>
         <div id="error_message">
             <h4>The following errors have occurred:</h4>
@@ -18,10 +19,12 @@
         <div class="field_with_errors">
     <% end %>
             <%= form_for(@genre) do |f| %>
-                <%= f.label :genre_type %>
-                <%= f.text_field :genre_type %>
-                <%= f.submit "Add Genre" %>
+                <%= f.text_field :genre_type, placeholder: true %>
+                <%= f.submit "Add Genre" %><br><br>
             <% end %>
         </div>
 <% end %>
-<%= link_to "go back", user_path(current_user.id) %>
+
+<div class="go_back_link">
+    <%= link_to "go back", user_path(current_user.id) %>
+</div>

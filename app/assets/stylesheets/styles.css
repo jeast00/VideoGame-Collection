@@ -260,6 +260,56 @@ body {
 
 /* -------------------------------- */
 
+/* css styles for genre form */
+
+.genre_form {
+    width: 200px;
+    padding: 40px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    background: #3D6884;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.genre_form input[type = 'text'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.genre_form h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.genre_form input[type = 'submit'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* end css styles for genre form */
+
+/* --------------------------------- */
+
 /* css styles for users show view */
 
 .welcome h1 {
