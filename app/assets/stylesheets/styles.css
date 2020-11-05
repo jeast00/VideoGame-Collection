@@ -5,6 +5,23 @@ body {
     background: #6FBFF5;
 }
 
+/* css styles for nav-bar  */
+
+.nav-bar {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* end css styles for nav-bar  */
+
+/* ------------------------- */
+
 /* css styles for login form */
 
 .login_form {
@@ -32,7 +49,7 @@ body {
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: auto;
     text-align: center;
     border: 3px solid #D5EBFA;
     padding: 10px 10px;
@@ -55,7 +72,7 @@ body {
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: auto;
     text-align: center;
     border: 3px solid #D5EBFA;
     padding: 10px 10px;
@@ -66,3 +83,92 @@ body {
 }
 
  /* end css styles for login form  */
+
+ /* ------------------------------ */
+
+ /* css styles for errors */
+
+ #error_message h4 {
+    color: orangered;
+    text-transform: uppercase;
+ }
+
+ #error_message {
+     color: orangered;
+     text-transform: uppercase;
+ }
+
+ /* css styles for signup form */
+
+ .signup_form {
+    width: 200px;
+    padding: 40px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    background: #3D6884;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.signup_form h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.signup_form p {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.signup_form label {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+
+.signup_form input[type = 'text'],.signup_form input[type = 'email'],.signup_form input[type = 'password'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 5px 5px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+select {
+    border: 0;
+    background: #3D6884;
+    background: ;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 5px 5px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.signup_form input[type = 'submit'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* end css styles for sign up form */

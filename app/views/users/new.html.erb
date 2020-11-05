@@ -1,6 +1,7 @@
-<h2>Sign Up Here!</h2>
 
-<%= form_tag @user, method: 'post' do %>
+
+<%= form_tag(@user, { class: "signup_form" } )do %>
+<h2>Sign Up Here!</h2>
     <% if @user.errors.any? %>
         <div id="error_message">
             <h4>The following errors have occurred:</h4>
@@ -19,26 +20,22 @@
     <% end %>
         <%= form_for @user, url:'/signup' do |f| %>
 
-            <%= f.label :name %>
-            <%= f.text_field :name %><br><br>
+            <%= f.text_field :name, placeholder: true %><br><br>
 
-            <%= f.label :email %>
-            <%= f.email_field :email %><br><br>
+            <%= f.email_field :email, placeholder: true %><br><br>
 
-            <%= f.label :password %>
-            <%= f.password_field :password %><br><br>
+            <%= f.password_field :password, placeholder: true %><br><br>
 
             <p>Immediately add a game to your collection at signup!</p>
 
             <%= f.fields_for :games do |game| %>
-                <%= game.label :title %>
-                <%= game.text_field :title, required: true %><br><br>
+                
+                <%= game.text_field :title, placeholder: true, required: true %><br><br>
 
-                <%= game.label :platform %>
-                <%= game.text_field :platform, required: true %><br><br>
+                <%= game.text_field :platform, placeholder: true, required: true %><br><br>
 
                 <%= game.label :genre_type %>
-                <%= game.collection_select :genre_id, Genre.all, :id, :genre_type %><br><br>
+                <%= game.collection_select :genre_id, Genre.all, :id, :genre_type, {}, { class: 'genre_selection' } %><br><br>
 
             <% end %>
 
