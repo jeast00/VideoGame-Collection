@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #6FBFF5;
+}
+
+/* css styles for login form */
+
+.login_form {
+    width: 200px;
+    padding: 40px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    background: #3D6884;
+    text-align: center;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: white;
+}
+
+.login_form h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.login_form input[type = 'email'],.login_form input[type = 'password'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.signup_account {
+    position: relative;
+    text-align: center;
+}
+
+.github_sign_in {
+    position: relative;
+    text-align: center;
+}
+
+.login_form input[type = 'submit'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #D5EBFA;
+    padding: 10px 10px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+ /* end css styles for login form  */
