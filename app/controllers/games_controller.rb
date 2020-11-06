@@ -6,20 +6,12 @@ class GamesController < ApplicationController
         @game = Game.new(user_id: params[current_user.id])
     end
 
-    def index
-        if params[current_user.id] && @user = User.find_by_id(params[current_user.id])
-            @games = @user.games
-        else
-            @games = Game.all
-        end
-    end
-
     def show
         @game = Game.find_by_id(params[:id])
     end
 
     def create
-        @game = current_user.games.build(game_params)
+        @game = current_user.games.build
 
         if @game.save
             redirect_to user_path(current_user)

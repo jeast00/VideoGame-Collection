@@ -1,5 +1,4 @@
 
-
 <div class="game_details">
     <h1><%= current_user.name %>'s Game Collection Details </h1>
     <p><h3>Title: <%= @game.title %></h3></p>
@@ -15,3 +14,4 @@
 <div class="go_back_link">
     <%= link_to "go back", user_games_path(current_user.id) %>
 </div>
+
