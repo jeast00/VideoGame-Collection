@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
     accepts_nested_attributes_for :games
 
+    default_scope { order(:name) }
+
     #scope method for session login omniauth
     def self.find_or_create_by_omniauth(auth_hash)
         self.where(:name => auth_hash['info']['name'], :email => auth_hash['info']['email']).first_or_create do |user|

@@ -1,7 +1,7 @@
 
 <div class="genre_most_games">
     <% @genres.each do |genre| %>
-        <h1><%= genre.genre_type %></h1>
+        <h1><%= link_to genre.genre_type, genre_games_path(genre.id) %></h1>
     <% end %>
 </div>
 

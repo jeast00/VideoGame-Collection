@@ -1,13 +1,15 @@
 
-<div class="game_list">
-<h1><%= current_user.name %>'s Game Collection </h1>
-    <ul>
-        <% current_user.games.each do |game| %>
-            <li><%= link_to game.title, user_game_path(current_user.id, game.id) %></li>
-        <% end %>
-    </ul>
-</div>
+    <div class="game_list">
+        <h1><%= @user.name %>'s Game Collection </h1>
+            <ul>
+                <% @user.games.each do |game| %>
+                    <li><%= link_to game.title, user_game_path(@user, game.id) %></li>
+                <% end %>
+            </ul>
+    </div>
+    
+    <div class="go_back_link">
+        <%= link_to "go back", user_path(@user) %>
+    </div>
 
-<div class="go_back_link">
-    <%= link_to "go back", user_path(current_user.id) %>
-</div>
+
