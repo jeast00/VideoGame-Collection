@@ -1,17 +1,14 @@
 class GamesController < ApplicationController
 
     before_action :redirect_if_not_logged_in
+    before_action :find_game #use private method for finding game
 
     def new
         @game = Game.new(user_id: params[current_user.id])
     end
 
-    def show
-        @game = Game.find_by_id(params[:id])
-    end
-
     def create
-        @game = current_user.games.build
+        @game = current_user.games.build(game_params)
 
         if @game.save
             redirect_to user_path(current_user)
@@ -20,12 +17,7 @@ class GamesController < ApplicationController
         end
     end
 
-    def edit
-        @game = Game.find_by_id(params[:id])
-    end
-
     def update
-        @game = Game.find_by_id(params[:id])
         
         if @game.update(game_params)
             redirect_to user_game_path(current_user.id, @game)
@@ -35,12 +27,15 @@ class GamesController < ApplicationController
     end
 
     def destroy
-        @game = Game.find_by_id(params[:id])
         @game.destroy
         redirect_to user_path(current_user)
     end
 
     private
+
+    def find_game
+        @game = Game.find_by_id(params[:id]) #refactor and DRY up find_by_id into one method
+    end
 
     def game_params
         params.require(:game).permit(:title, :platform, :genre_id, :user_id)
