@@ -11,6 +11,7 @@ body {
     color: white;
     text-transform: uppercase;
     font-weight: 100;
+    border-bottom: 1px solid white;
 }
 
 .nav-bar a {
@@ -322,6 +323,26 @@ body {
 }
 
 .game_list ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* end css styles for game list */
+
+/* --------------------------------- */
+
+/* css styles for game list */
+
+.user_list {
+    color: white;
+    text-transform: uppercase;
+}
+
+.user_list h1 {
+    font-weight: 200;
+}
+
+.user_list ul li a {
     color: white;
     text-decoration: none;
 }

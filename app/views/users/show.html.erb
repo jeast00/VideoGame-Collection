@@ -5,11 +5,11 @@
 
 <div class="links">
     <p>
-        <%= link_to 'Add a Game', new_user_game_path(@user) %> |
+        <%= link_to 'Add a Game to Your Collection', new_user_game_path(@user) %> |
         <%= link_to 'Add a Genre', new_genre_path %> |
         <%= link_to 'See List of Users', users_path %> |
-        <%= link_to 'See game collection', user_games_path(current_user) %> |
-        <%= link_to 'Genre with the most games', genres_path %> |
-        <%= link_to 'log out', sessions_path, method: :delete, data: { confirm: "Are you sure you want to logout?" } %><br>
+        <%= link_to 'See your game collection', user_games_path(current_user) %> |
+        <%= link_to 'Genre with the Most Games', genres_path %> |
+        <%= link_to 'log Out', sessions_path, method: :delete, data: { confirm: "Are you sure you want to logout?" } %><br>
     </p>
 </div>
