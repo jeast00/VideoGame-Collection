@@ -6,6 +6,11 @@ class UsersController < ApplicationController
         @users = User.all 
     end
 
+    def search
+        @users = User.user_search(params[:name])
+        render :index
+    end
+
     def new
         @user = User.new
         @user.games.build #nested attributes build for new view in user signup

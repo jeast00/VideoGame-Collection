@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#create'
+  get '/search' => 'users#search'
   
   #Nested routes new, show, or index
 
